@@ -1,0 +1,97 @@
+@use '~@angular/material' as mat;
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~material-icons/iconfont/material-icons.css";
+
+///////////////////////////
+// TYPOGRAPHY CONFIG
+///////////////////////////
+@import "variables";
+
+$typography: mat.define-typography-config(
+  $font-family: $font-family-base,
+  // mat.define-typography-level(font-size, line-height, font-weight, font-family, letter-spacing)
+  $display-4: mat.define-typography-level(96px, 96px, 300, $letter-spacing: 0em),
+  $display-3: mat.define-typography-level(56px, 56px, 300, $letter-spacing: -0.02em),
+  $display-2: mat.define-typography-level(45px, 48px, 300, $letter-spacing: -0.005em),
+  $display-1: mat.define-typography-level(34px, 40px, 300),
+  $headline: mat.define-typography-level(32px, 48px, 700),
+  $title: mat.define-typography-level(25px, 32px, 600),
+  $subheading-2: mat.define-typography-level(16px, 28px, 400),
+  $subheading-1: mat.define-typography-level(15px, 24px, 400),
+  $body-2: mat.define-typography-level(14px, 24px, 500),
+  $body-1: mat.define-typography-level(16px, 24px, 500),
+  $caption: mat.define-typography-level(12px, 20px, 400),
+  $button: mat.define-typography-level(14px, 14px, 500),
+  // Line-height must be unit-less fraction of the font-size.
+  $input: mat.define-typography-level(inherit, 1.25, 400),
+);
+
+@include mat.core($typography);
+@include mat.all-component-typographies($typography);
+
+///////////////////////////
+// Light style
+///////////////////////////
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+
+$mat-primary: (
+  main: #f68b1e,
+  lighter: #ffffff,
+  darker: #ce4603,
+  200: #dc6206,
+  // For slide toggle,
+  contrast:
+    (
+      main: $light-primary-text,
+      lighter: $dark-primary-text,
+      darker: $light-primary-text,
+    ),
+);
+
+$mat-accent: (
+  main: #53405f,
+  lighter: #e1bee7,
+  darker: #ba68c8,
+  200: #7b1fa2,
+  contrast: (
+    main: $light-primary-text,
+    lighter: $dark-primary-text,
+    darker: $dark-primary-text,
+  ),
+);
+
+$primary: mat.define-palette($mat-primary, main, lighter, darker);
+$accent: mat.define-palette($mat-accent, main, lighter, darker);
+$warn: mat.define-palette(mat.$red-palette);
+$theme: mat.define-light-theme($primary, $accent, $warn);
+$config: mat.define-typography-config();
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+
+@include mat.all-component-themes($theme);
+
+// .material-icons {
+//   font-size: 24px;
+//   font-family: "Material Icons Outline", "Material Icons";
+//   .mat-badge-content {
+//     font-family: "Roboto";
+//   }
+// }
+
+//snake bare
+.snack-success {
+  background: rgba(27, 172, 27, 0.661);
+}
+
+.snack-error {
+  background-color: orangered;
+}
+
+mat-error {
+  font-size: 14px;
+}

@@ -1,0 +1,7 @@
+# add files you wish to ignore here
+
+# folders
+dist
+
+# files
+package-lock.json

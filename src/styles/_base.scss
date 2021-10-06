@@ -1,0 +1,294 @@
+@import "variables";
+
+* {
+  font-family: "serif";
+}
+:root {
+  --color: #f68b1e;
+  --prod-img-size: 100px;
+}
+// border
+.b-r-5 {
+  border-radius: 5px !important;
+}
+.b-r-3 {
+  border-radius: 3px;
+}
+.b-r-2 {
+  border-radius: 2px;
+}
+
+.p-4 {
+  margin: 4px !important;
+}
+.p-r-4 {
+  padding-right: 4px !important;
+}
+.p-l-4 {
+  padding-left: 4px !important;
+}
+.p-r-15 {
+  padding-right: 15px !important;
+}
+.p-l-15 {
+  padding-left: 15px !important;
+}
+
+.p-8 {
+  margin: 8px !important;
+}
+
+.m-t-16 {
+  margin-top: 16px !important;
+}
+
+.m-t-8 {
+  margin-top: 8px !important;
+}
+.m-b-8 {
+  margin-bottom: 8px !important;
+}
+.m-t-b-8 {
+  margin: 8px 0 !important;
+}
+.m-r-5 {
+  margin-right: 5px !important;
+}
+.m-l-5 {
+  margin-left: 5px !important;
+}
+
+.w-full {
+  width: 100%;
+}
+// height
+.h-18 {
+  height: 18px;
+}
+.h-40 {
+  height: 40px !important;
+}
+.h-t-18 {
+  line-height: 18px;
+  height: 20px;
+}
+.h-full {
+  height: 100%;
+}
+// titles
+.tittle-18 {
+  padding: 0;
+  margin: 0;
+  height: 20px;
+  font-size: 1.25rem;
+}
+// weight
+.t-bold {
+  font-weight: bold;
+}
+.t-400 {
+  font-weight: 400;
+}
+.t-600 {
+  font-weight: 600;
+}
+// align
+.t-start {
+  text-align: start;
+}
+.t-end {
+  text-align: end;
+}
+.t-center {
+  text-align: center;
+}
+// custom
+.button1 {
+  height: 45px;
+  margin: 0 10px !important;
+  padding: 0 4px !important;
+  font-size: 19px !important;
+  font-weight: bold;
+  mat-icon {
+    font-size: 30px;
+    height: 30px;
+    width: 30px;
+    margin: 0 1px;
+  }
+}
+.button-2 {
+  height: 40px;
+  margin: 3px 5px !important;
+  font-size: 15px !important;
+  font-weight: bold;
+  mat-icon {
+    font-size: 25px;
+    height: 25px;
+    width: 25px;
+    margin: 0 3px;
+  }
+}
+.button-3 {
+  height: 35px;
+  margin: 3px 5px !important;
+  font-size: 13px !important;
+  font-weight: bold;
+  mat-icon {
+    font-size: 23px;
+    height: 23px;
+    width: 23px;
+    margin: 0 3px;
+  }
+}
+.title-1 {
+  height: 45px;
+  margin: 0 8px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.title-2 {
+  min-height: 35px;
+  margin: 0 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+.mat-icon-1 {
+  min-height: 25px;
+  width: 25px;
+  font-size: 20px;
+}
+/* images ***************/
+.svg-icon {
+  height: 22px;
+  width: 22px;
+  // object-fit: contain;
+  margin: 0 4px;
+}
+
+//
+.button1:hover,
+.button-2:hover {
+  color: var(--color, black);
+  // background-color: #ff6f0010;
+}
+
+a:hover,
+a:active {
+  cursor: pointer;
+}
+.best-seller {
+  .title {
+    height: 40px;
+    border-radius: 4px;
+    margin: 4px 10px;
+    padding: 4px 5px;
+    font-size: 22px;
+    font-weight: 600;
+  }
+  .show-all {
+    font-size: 18px;
+    text-decoration: none;
+  }
+  .show-all:hover {
+    cursor: pointer;
+  }
+  min-height: 250px;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  item {
+    margin: 8px 0;
+    border-radius: 5px;
+    transition: 0.1s ease-in;
+  }
+  item:hover,
+  item:checked {
+    cursor: pointer;
+    -webkit-box-shadow: 0px 0px 15px 6px rgb(73, 66, 66);
+    -moz-box-shadow: 0px 0px 15px 6px rgba(214, 214, 214, 1);
+    box-shadow: 0px 0px 15px 6px rgba(214, 214, 214, 1);
+  }
+}
+.hr {
+  margin-top: 2px;
+  margin-bottom: 0;
+}
+.hr-1 {
+  background-color: #a2a2a2;
+  margin-top: 2px;
+  margin-bottom: 0;
+}
+.s-btn {
+  height: 33px;
+  width: 33px;
+  padding: 10px;
+  border-radius: 50%;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  color: var(--color);
+}
+.g-btn {
+  outline: none;
+  border: none;
+  text-decoration: none;
+  color: var(--color);
+}
+.s-btn:hover,
+.g-btn:hover {
+  color: var(--color);
+}
+
+.del-s-btn {
+  color: #f44336;
+}
+
+.del-s-btn:hover {
+  color: #f44336;
+  background-color: #f4433639;
+}
+
+.main-cont {
+  padding: 10px;
+  .card {
+    height: 200px;
+    margin: 7.5px 0;
+    border-radius: 5px;
+
+    .edit-tap {
+      border: 0.3px solid rgb(236, 236, 236);
+    }
+  }
+}
+
+// .skelton {
+//   opacity: 1;
+//   border-radius: 3px;
+//   animation: skelton-loading 1s linear infinite alternate;
+// }
+// .skelton:last-child {
+//   width: 70%;
+// }
+
+// @keyframes skelton-loading {
+//   0% {
+//     background-color: hsla(199, 20%, 70%, 0.218);
+//   }
+//   100% {
+//     background-color: hsl(200, 20%, 95%, 0.218);
+//   }
+// }
+
+@media screen and (max-width: 600px) {
+  .button1 {
+    height: 35px !important;
+    margin: 5px !important;
+    font-size: 16px !important;
+    font-weight: bold;
+    mat-icon {
+      font-size: 25px;
+      height: 25px;
+      width: 25px;
+      margin: 0 2px;
+    }
+  }
+}

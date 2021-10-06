@@ -1,0 +1,65 @@
+<br />
+<div
+  class="pagination-container"
+  fxLayout="row"
+  fxLayoutAlign="space-between center"
+  fxLayoutGap="10px"
+  dir="rtl"
+>
+  <button
+    class="count"
+    fxLayoutAlign="center center"
+    (click)="previousBtn()"
+    [ngStyle.lt-md]="{
+      'height.px': 25,
+      'font-size.px': 12,
+      'padding': ' 0 3px'
+    }"
+  >
+    <mat-icon>navigate_next</mat-icon>
+    السابق
+  </button>
+  <div
+    fxShow.gt-sm
+    fxHide.lt-md
+    fxLayout="row"
+    fxLayoutAlign="space-between center"
+    fxLayoutGap="10px"
+  >
+    <button
+      *ngFor="let btn of lgBtnValues"
+      class="p-lg-btn  {{ btn.val === counter ? 'selected' : '' }}"
+      (click)="smallBtn(btn.val)"
+    >
+      {{ btn.val }}
+    </button>
+  </div>
+  <div
+    fxHide.gt-sm
+    fxShow.lt-md
+    fxLayout="row"
+    fxLayoutAlign="space-between center"
+    fxLayoutGap="10px"
+  >
+    <button
+      *ngFor="let btn of smBtnValues"
+      class="p-sm-btn  {{ btn.val === counter ? 'selected' : '' }}"
+      (click)="smallBtn(btn.val)"
+    >
+      {{ btn.val }}
+    </button>
+  </div>
+  <button
+    class="count"
+    fxLayoutAlign="center center"
+    (click)="nextBtn()"
+    [ngStyle.lt-md]="{
+      'height.px': 25,
+      'font-size.px': 12,
+      'padding': ' 0 3px'
+    }"
+  >
+    التالي
+    <mat-icon>navigate_before</mat-icon>
+  </button>
+</div>

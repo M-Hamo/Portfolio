@@ -1,0 +1,28 @@
+// scroll customize
+/* width */
+::-webkit-scrollbar {
+  width: 16px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #f68b1e;
+  border-radius: 20px;
+  border: 4px solid #ffffff;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #ff6f00;
+  opacity: 1;
+}
+@media (max-width: 953px) {
+  ::-webkit-scrollbar {
+    width: 0px;
+  }
+}

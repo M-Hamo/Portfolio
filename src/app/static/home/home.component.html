@@ -1,1 +1,98 @@
-<p>home works!</p>
+<div class="first" fxLayout="row wrap" fxLayoutAlign="center center">
+  <div
+    fxFlex="50"
+    fxFlex.lt-md="70"
+    fxFlex.xs="90"
+    class="banner"
+    fxLayout="column"
+    fxLayoutAlign="center stretch"
+    data-aos="fade-right"
+    data-aos-duration="2000"
+    data-aos-easing="ease-in-sine"
+  >
+    <div class="name">
+      <strong class="me">Mohamed Eldeeb</strong> Software developer.
+    </div>
+
+    <div
+      class="about-me"
+      fxLayout="row wrap"
+      fxLayoutAlign="center center"
+      data-aos="fade-left"
+      data-aos-duration="2000"
+      data-aos-easing="ease-in-sine"
+    >
+      <div fxFlex="67" fxLayout="column" fxLayoutAlign="start stretch">
+        <div fxLayoutAlign="start center"><h4>About me</h4></div>
+        <div class="paragraph">
+          My name is Mohamed, I graduated from the Faculty of Science, Tanta University,
+          with a bachelor's degree Department of Computer Science with a grade of very
+          good.
+        </div>
+        <div>
+          <a class="super-b">My projects</a>
+        </div>
+      </div>
+
+      <div fxFlex class="photo" fxLayoutAlign="center center">
+        <img src="assets/img/profile.jpeg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="second" fxLayout="row wrap" fxLayoutAlign="center center">
+  <div
+    fxFlex="50"
+    fxFlex.lt-md="70"
+    fxFlex.xs="90"
+    fxLayout="column"
+    fxLayoutAlign="center center"
+    class="banner"
+    data-aos="flip-up"
+    data-aos-easing="ease-out-cubic"
+    data-aos-duration="2000"
+  >
+    <h4 fxLayoutAlign="center center">My Projects</h4>
+    <div class="project-cont" fxLayout="row wrap" fxLayoutAlign="space-between center">
+      <app-project
+        *ngFor="let proj of projects"
+        [proj]="proj"
+        data-aos="flip-left"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="2000"
+      ></app-project>
+    </div>
+  </div>
+</div>
+
+<div class="third" fxLayout="row wrap" fxLayoutAlign="center center">
+  <div
+    fxFlex="50"
+    fxFlex.lt-md="70"
+    fxFlex.xs="90"
+    class="banner"
+    fxLayout="column"
+    fxLayoutAlign="center stretch"
+    data-aos="fade-up"
+    data-aos-offset="500"
+    data-aos-easing="ease-out-cubic"
+    data-aos-duration="500"
+  >
+    <h4>Skills</h4>
+    <div class="skills-container" fxLayout="row wrap" fxLayoutAlign="center start">
+      <div
+        class="skill"
+        fxLayoutAlign="center center"
+        *ngFor="let skill of skills"
+        [style]="{ color: skill.color }"
+        data-aos="fade-down"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="1500"
+      >
+        <img src="{{ skill.icon }}" alt="" />
+        {{ skill.name }}
+      </div>
+    </div>
+  </div>
+</div>

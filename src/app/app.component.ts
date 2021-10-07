@@ -1,7 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+import * as AOS from "aos";
 
 @Component({
-  selector: 'app-root',
-  template: '<router-outlet></router-outlet>',
+  selector: "app-root",
+  template: `<router-outlet></router-outlet>`,
 })
-export class AppComponent {}
+export class AppComponent implements OnInit {
+  ngOnInit(): void {
+    AOS.init();
+  }
+}

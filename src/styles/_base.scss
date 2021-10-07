@@ -4,7 +4,7 @@
   font-family: "serif";
 }
 :root {
-  --color: #f68b1e;
+  --color: #fa5252;
   --prod-img-size: 100px;
 }
 // border
@@ -260,23 +260,23 @@ a:active {
   }
 }
 
-// .skelton {
-//   opacity: 1;
-//   border-radius: 3px;
-//   animation: skelton-loading 1s linear infinite alternate;
-// }
-// .skelton:last-child {
-//   width: 70%;
-// }
-
-// @keyframes skelton-loading {
-//   0% {
-//     background-color: hsla(199, 20%, 70%, 0.218);
-//   }
-//   100% {
-//     background-color: hsl(200, 20%, 95%, 0.218);
-//   }
-// }
+.super-b {
+  display: inline-block;
+  background-color: var(--color);
+  color: #fff;
+  letter-spacing: 1px;
+  font-size: 13px;
+  padding: 12px 18px;
+  font-weight: 300;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  transition: 0.15s ease-in;
+  &:hover {
+    background-color: transparent;
+    border: 1px solid #ffff;
+  }
+}
 
 @media screen and (max-width: 600px) {
   .button1 {

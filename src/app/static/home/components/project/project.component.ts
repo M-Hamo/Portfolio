@@ -1,6 +1,7 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { Project } from "src/shared/utilities/interfaces";
-
+import { DataService } from "../../services/data.service";
+import { MatDialog } from "@angular/material/dialog";
 
 @Component({
   selector: "app-project",
@@ -9,7 +10,13 @@ import { Project } from "src/shared/utilities/interfaces";
 })
 export class ProjectComponent implements OnInit {
   @Input() proj: Project;
-  constructor() {}
+  @Output() showImages = new EventEmitter();
+  constructor(private _data: DataService, public _imgDialog: MatDialog) {}
+  imgs: any = this._data.getClaroImages$.subscribe();
 
   ngOnInit(): void {}
+
+  onShowProject(title?: string): void {
+    this.showImages.next(title);
+  }
 }

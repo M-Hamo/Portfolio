@@ -19,7 +19,7 @@ import { Component, OnInit } from "@angular/core";
       }
       .lds-ripple div {
         position: absolute;
-        border: 5px solid #f68b1e;
+        border: 5px solid var(--color);
         opacity: 1;
         border-radius: 50%;
         animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;

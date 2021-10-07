@@ -1,3 +1,13 @@
+<div class="contacts" dir="ltr" #top>
+  <p-speedDial
+    [model]="socialButtons"
+    [radius]="150"
+    direction="down-right"
+    type="quarter-circle"
+    showIcon="pi pi-bars"
+    hideIcon="pi pi-times"
+  ></p-speedDial>
+</div>
 <div class="first" fxLayout="row wrap" fxLayoutAlign="center center">
   <div
     fxFlex="50"
@@ -10,9 +20,7 @@
     data-aos-duration="2000"
     data-aos-easing="ease-in-sine"
   >
-    <div class="name">
-      <strong class="me">Mohamed Eldeeb</strong> Software developer.
-    </div>
+    <div class="name"><strong class="me">Mohamed Eldeeb</strong> Software developer.</div>
 
     <div
       class="about-me"
@@ -29,19 +37,57 @@
           with a bachelor's degree Department of Computer Science with a grade of very
           good.
         </div>
-        <div>
-          <a class="super-b">My projects</a>
+        <div fxLayoutAlign="start center" fxLayoutGap="20px">
+          <a class="super-b" (click)="scrollToElement(myProjects)">My projects</a>
+          <a class="super-b" (click)="scrollToElement(mySkills)">My Skills</a>
         </div>
       </div>
 
       <div fxFlex class="photo" fxLayoutAlign="center center">
-        <img src="assets/img/profile.jpeg" />
+        <p-image
+          src="assets/img/profile.jpeg"
+          alt="Image"
+          width="200"
+          height="200"
+          [preview]="true"
+        ></p-image>
       </div>
     </div>
   </div>
 </div>
 
-<div class="second" fxLayout="row wrap" fxLayoutAlign="center center">
+<div #myProjects class="second" fxLayout="row wrap" fxLayoutAlign="center center">
+  <p-galleria
+    [value]="images"
+    [(visible)]="displayImages"
+    [responsiveOptions]="responsiveOptions"
+    [containerStyle]="{ 'max-width': '850px' }"
+    [numVisible]="7"
+    [circular]="true"
+    [fullScreen]="true"
+    [showItemNavigators]="true"
+    [showThumbnails]="false"
+    [baseZIndex]="100000"
+  >
+    <ng-template pTemplate="item" let-item>
+      <app-preloader *ngIf="preloader"></app-preloader>
+      <img
+        *ngIf="!preloader && images.length !== 0"
+        [src]="item"
+        style="width: 100%; display: block"
+      />
+    </ng-template>
+    <ng-template pTemplate="thumbnail" let-item>
+      <div class="p-grid p-nogutter p-justify-center">
+        <app-preloader *ngIf="preloader"></app-preloader>
+        <img
+          *ngIf="!preloader && images.length !== 0"
+          [src]="item"
+          style="display: block"
+        />
+      </div>
+    </ng-template>
+  </p-galleria>
   <div
     fxFlex="50"
     fxFlex.lt-md="70"
@@ -53,11 +99,12 @@
     data-aos-easing="ease-out-cubic"
     data-aos-duration="2000"
   >
-    <h4 fxLayoutAlign="center center">My Projects</h4>
+    <h4 fxLayoutAlign="center center">Experiences</h4>
     <div class="project-cont" fxLayout="row wrap" fxLayoutAlign="space-between center">
       <app-project
         *ngFor="let proj of projects"
         [proj]="proj"
+        (showImages)="onShowProject($event)"
         data-aos="flip-left"
         data-aos-easing="ease-out-cubic"
         data-aos-duration="2000"
@@ -66,7 +113,7 @@
   </div>
 </div>
 
-<div class="third" fxLayout="row wrap" fxLayoutAlign="center center">
+<div #mySkills class="third" fxLayout="row wrap" fxLayoutAlign="center center">
   <div
     fxFlex="50"
     fxFlex.lt-md="70"
@@ -80,7 +127,12 @@
     data-aos-duration="500"
   >
     <h4>Skills</h4>
-    <div class="skills-container" fxLayout="row wrap" fxLayoutAlign="center start">
+    <div
+      *ngIf="skills$ | async as skills"
+      class="skills-container"
+      fxLayout="row wrap"
+      fxLayoutAlign="center start"
+    >
       <div
         class="skill"
         fxLayoutAlign="center center"
@@ -94,5 +146,8 @@
         {{ skill.name }}
       </div>
     </div>
+  </div>
+  <div fxFlex="100" class="made-by" fxLayoutAlign="center center">
+    Made by <a href="https://github.com/M-Hamo" target="_blanck">Mohamed Eldeeb</a> ❤✌
   </div>
 </div>

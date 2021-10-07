@@ -1,6 +1,10 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
+import { _MatTableDataSource } from "@angular/material/table";
+import { MenuItem } from "primeng/api";
+import { Observable } from "rxjs";
+import { tap } from "rxjs/operators";
 import { Project, Skill } from "src/shared/utilities/interfaces";
-
+import { DataService } from "./services/data.service";
 
 @Component({
   selector: "app-home",
@@ -8,60 +12,81 @@ import { Project, Skill } from "src/shared/utilities/interfaces";
   styleUrls: ["./home.component.scss"],
 })
 export class HomeComponent implements OnInit {
-  constructor() {}
+  displayImages: boolean = false;
+  preloader: boolean = true;
+  socialButtons: MenuItem[];
+  skills$: Observable<Skill[]> = this._data.getMySkills$;
+  images: string[] = [];
 
-
-
-  ngOnInit(): void {
-
-  }
-  skills: Skill[] = [
+  constructor(private _data: DataService) {}
+  responsiveOptions: any[] = [
     {
-      name: "Angular",
-      icon: "assets/skills-icons/angular.svg",
-      color: "#c80b0b",
+      breakpoint: "1024px",
+      numVisible: 5,
     },
     {
-      name: "Node.js",
-      icon: "assets/skills-icons/nodejs.svg",
-      color: "rgb(64, 65, 55)",
+      breakpoint: "768px",
+      numVisible: 3,
     },
     {
-      name: "Express",
-      icon: "assets/skills-icons/express.svg",
-      color: "#413434",
-    },
-    {
-      name: "MongoDB",
-      icon: "assets/skills-icons/mongodb.svg",
-      color: "rgb(79, 55, 43)",
-    },
-    {
-      name: "JavaScript",
-      icon: "assets/skills-icons/javascript.svg",
-      color: "rgb(240, 219, 79)",
-    },
-    {
-      name: "TypeScript",
-      icon: "assets/skills-icons/typescript.svg",
-      color: "#045992",
-    },
-    {
-      name: "HTML",
-      icon: "assets/skills-icons/html5-original.svg",
-      color: "#de4000",
-    },
-    {
-      name: "CSS",
-      icon: "assets/skills-icons/css3-original.svg",
-      color: "#006b9a",
-    },
-    {
-      name: "Sass",
-      icon: "assets/skills-icons/sass-original.svg",
-      color: "rgb(203, 102, 153)",
+      breakpoint: "560px",
+      numVisible: 1,
     },
   ];
+
+  ngOnInit(): void {
+    this.socialButtons = [
+      {
+        icon: "pi pi-home",
+        command: () => {
+          window.open("https://www.linkedin.com/in/mohamed-eldeeb-94a3b11a4/");
+        },
+      },
+      {
+        icon: "pi pi-send",
+        command: () => {
+          window.open(
+            "https://www.messenger.com/t/mohamed.30927023@science.tanta.edu.eg"
+          );
+        },
+      },
+      {
+        icon: "pi pi-google",
+        command: () => {
+          window.open("mailto:mohamed.eldeib5@gmail.com");
+        },
+      },
+      {
+        icon: "pi pi-phone",
+        command: () => {
+          window.open("https://wa.me/+201033898113");
+        },
+      },
+      {
+        icon: "pi pi-github",
+        command: () => {
+          window.open("https://github.com/M-Hamo", "_blank");
+        },
+      },
+    ];
+  }
+
+  onShowProject(title?: string): void {
+    title.includes("Claro Eg") &&
+      this._data.getClaroImages$.pipe(tap((_) => (this.displayImages = true))).subscribe({
+        next: (images) => {
+          this.images = images;
+          this.preloader = false;
+        },
+      });
+  }
+
+  scrollToElement($element): void {
+    setTimeout(() => {
+      $element.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+    }, 200);
+  }
+
   projects: Project[] = [
     {
       img: "assets/projects/Claro Eg/promo.png",

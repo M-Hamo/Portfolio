@@ -22,7 +22,7 @@
     border-left: 3px solid var(--color);
     /****/
     .name {
-      padding-top: 110px;
+      padding-top: 80px;
       font-size: 22px;
       line-height: 100px;
       color: var(--color);
@@ -60,12 +60,12 @@
         margin-bottom: 25px;
       }
       .photo {
-        img {
-          height: 200px;
-          width: 200px;
-          object-fit: fill;
-          border-radius: 100px;
-          border: 3px solid var(--color);
+        ::ng-deep {
+          .p-image-preview-container > img,
+          .p-image-preview-indicator {
+            border-radius: 100%;
+            border: 3px solid var(--color);
+          }
         }
       }
     }
@@ -110,6 +110,11 @@
   background-size: cover;
   overflow: hidden;
   background-attachment: fixed;
+  ::ng-deep {
+    .p-galleria-mask .p-galleria-item-nav {
+      color: var(--color);
+    }
+  }
   .banner {
     border-left: 3px solid var(--color);
 
@@ -148,5 +153,35 @@
         }
       }
     }
+  }
+}
+
+.contacts {
+  position: fixed;
+  float: left;
+  margin: 50px;
+  ::ng-deep {
+    .pi {
+      font-size: 1.7rem;
+      text-decoration: none;
+    }
+    .p-speeddial-button.p-button.p-button-icon-only {
+      background-color: #455871;
+      color: var(--color);
+    }
+    .p-speeddial-action {
+      background-color: var(--color);
+    }
+  }
+}
+
+.made-by {
+  padding: 10px;
+  color: #fff;
+  a {
+    margin: 0 8px;
+    text-decoration: none;
+    color: var(--color);
+    font-weight: 300;
   }
 }

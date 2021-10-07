@@ -18,7 +18,8 @@ import { GalleriaModule } from "primeng/galleria";
 import { OverlayPanelModule } from "primeng/overlaypanel";
 import { SkeletonModule } from "primeng/skeleton";
 import { RippleModule } from "primeng/ripple";
-
+import { ImageModule } from "primeng/image";
+import { SpeedDialModule } from "primeng/speeddial";
 
 @NgModule({
   exports: [
@@ -41,6 +42,8 @@ import { RippleModule } from "primeng/ripple";
     OverlayPanelModule,
     SkeletonModule,
     RippleModule,
+    ImageModule,
+    SpeedDialModule,
   ],
 })
 export class PrimeNgModule {}

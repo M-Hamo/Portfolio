@@ -9,7 +9,9 @@
       </div>
       <p fxLayoutAlign="start center">{{ proj.details }}</p>
       <div fxLayoutAlign="start center">
-        <a class="super-b" fxLayoutAlign="center center">My projects</a>
+        <a class="super-b" fxLayoutAlign="center center" (click)="onShowProject(proj.title)"
+          >show more</a
+        >
       </div>
     </div>
   </div>

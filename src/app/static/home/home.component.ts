@@ -46,7 +46,7 @@ export class HomeComponent implements OnInit {
         icon: "pi pi-send",
         command: () => {
           window.open(
-            "https://www.messenger.com/t/mohamed.30927023@science.tanta.edu.eg"
+            "http://m.me/MohamedXEldeeb"
           );
         },
       },

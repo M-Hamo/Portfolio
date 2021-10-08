@@ -116,6 +116,8 @@
     }
   }
   .banner {
+    min-height: 90vh;
+    padding: 0px 20px;
     border-left: 3px solid var(--color);
 
     h4 {
@@ -131,6 +133,7 @@
     }
 
     .skills-container {
+     
       .skill {
         height: 55px;
         transform: 0.1s;

@@ -26,7 +26,7 @@ const Skills: Skill[] = [
     color: "rgb(64, 65, 55)",
   },
   {
-    name: "Express",
+    name: "Express.js",
     icon: "assets/skills-icons/express.svg",
     color: "#413434",
   },
@@ -60,4 +60,121 @@ const Skills: Skill[] = [
     icon: "assets/skills-icons/sass-original.svg",
     color: "rgb(203, 102, 153)",
   },
+  {
+    name: "Redux",
+    icon: "assets/skills-icons/redux-original.svg",
+    color: "#764abc",
+  },
+  {
+    name: "Bootstrap",
+    icon: "assets/skills-icons/bootstrap-original.svg",
+    color: "#790af6",
+  },
+  {
+    name: "Git",
+    icon: "assets/skills-icons/git-original.svg",
+    color: "#f34f29",
+  },
+  {
+    name: "Github",
+    icon: "assets/skills-icons/github-original.svg",
+    color: "#181616",
+  },
+  {
+    name: "Ionic",
+    icon: "assets/skills-icons/ionic-original.svg",
+    color: "#4e8ef7",
+  },
+  {
+    name: "Npm",
+    icon: "assets/skills-icons/npm-original-wordmark.svg",
+    color: "#cb3837",
+  },
+  {
+    name: "Photoshop",
+    icon: "assets/skills-icons/photoshop-plain.svg",
+    color: "#80b5e2",
+  },
+  {
+    name: "Socketio",
+    icon: "assets/skills-icons/socketio-original.svg",
+    color: "#010101",
+  },
+  {
+    name: "Algorithms",
+    icon: "assets/skills-icons/thealgorithms-original.svg",
+    color: "#00bcb4",
+  },
+  {
+    name: "WordPress",
+    icon: "assets/skills-icons/wordpress-plain.svg",
+    color: "#494949",
+  },
+
+  {
+    name: "Rxjs",
+    icon: "assets/skills-icons/wordpress-plain.svg",
+    color: "#c0128e",
+  },
+  {
+    name: "NGRX",
+    icon: "assets/skills-icons/wordpress-plain.svg",
+    color: "#4b314f",
+  },
+  {
+    name: "ES6",
+    icon: "assets/skills-icons/wordpress-plain.svg",
+    color: "#f6d755",
+  },
+  {
+    name: "Problem Solving",
+    icon: "assets/skills-icons/wordpress-plain.svg",
+    color: "#167672",
+  },
+  {
+    name: "Data Structures",
+    icon: "assets/skills-icons/wordpress-plain.svg",
+    color: "#072539",
+  },
+  {
+    name: "OOP",
+    icon: "assets/skills-icons/wordpress-plain.svg",
+    color: "#145073",
+  },
+  {
+    name: "Angular Material",
+    icon: "assets/skills-icons/wordpress-plain.svg",
+    color: "#a92f38",
+  },
+  {
+    name: "PrimNg",
+    icon: "assets/skills-icons/wordpress-plain.svg",
+    color: "#494949",
+  },
+  {
+    name: "SCSS",
+    icon: "assets/skills-icons/wordpress-plain.svg",
+    color: "#494949",
+  },
+  {
+    name: "Angular Animations",
+    icon: "assets/skills-icons/wordpress-plain.svg",
+    color: "#494949",
+  },
+  {
+    name: "Angular Schematics",
+    icon: "assets/skills-icons/wordpress-plain.svg",
+    color: "#494949",
+  },
+  {
+    name: "Restfull APIS",
+    icon: "assets/skills-icons/wordpress-plain.svg",
+    color: "#494949",
+  },
+  {
+    name: "Agile",
+    icon: "assets/skills-icons/wordpress-plain.svg",
+    color: "#494949",
+  },
+
 ];

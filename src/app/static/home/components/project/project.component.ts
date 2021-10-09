@@ -12,7 +12,6 @@ export class ProjectComponent implements OnInit {
   @Input() proj: Project;
   @Output() showImages = new EventEmitter();
   constructor(private _data: DataService, public _imgDialog: MatDialog) {}
-  imgs: any = this._data.getClaroImages$.subscribe();
 
   ngOnInit(): void {}
 

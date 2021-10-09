@@ -6,6 +6,7 @@ export interface Project {
 
 export interface Skill {
   name: string;
-  icon: string;
+  icon?: string;
+  fullImg?: string;
   color: string;
 }

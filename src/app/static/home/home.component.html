@@ -114,37 +114,26 @@
 </div>
 
 <div #mySkills class="third" fxLayout="row wrap" fxLayoutAlign="center center">
+  <h4 fxFlex="100" fxLayoutAlign="center center">Skills</h4>
   <div
-    fxFlex="50"
-    fxFlex.lt-md="70"
-    fxFlex.xs="90"
-    class="banner"
-    fxLayout="column"
-    fxLayoutAlign="center stretch"
-    data-aos="fade-up"
-    data-aos-offset="500"
-    data-aos-easing="ease-out-cubic"
-    data-aos-duration="500"
+    fxFlex="90"
+    fxFlex.xs="95"
+    class="skills-container"
+    *ngIf="skills$ | async as skills"
+    fxLayout="row wrap"
+    fxLayoutAlign="center start"
   >
-    <h4>Skills</h4>
     <div
-      *ngIf="skills$ | async as skills"
-      class="skills-container"
-      fxLayout="row wrap"
-      fxLayoutAlign="center start"
+      class="skill"
+      fxLayoutAlign="center center"
+      *ngFor="let skill of skills"
+      [style]="{ color: skill.color }"
+      data-aos="fade-down"
+      data-aos-easing="ease-out-cubic"
+      data-aos-duration="1500"
     >
-      <div
-        class="skill"
-        fxLayoutAlign="center center"
-        *ngFor="let skill of skills"
-        [style]="{ color: skill.color }"
-        data-aos="fade-down"
-        data-aos-easing="ease-out-cubic"
-        data-aos-duration="1500"
-      >
-        <img src="{{ skill.icon }}" alt="" />
-        {{ skill.name }}
-      </div>
+      <img src="{{ skill.icon }}" alt="" />
+      {{ skill.name }}
     </div>
   </div>
   <div fxFlex="100" class="made-by" fxLayoutAlign="center center">

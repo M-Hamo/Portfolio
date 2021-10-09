@@ -1,17 +1,24 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { of } from "rxjs";
-import { filter, map, tap } from "rxjs/operators";
+import { Observable, of, throwError } from "rxjs";
+import { catchError, filter, map, tap } from "rxjs/operators";
 import { Skill } from "src/shared/utilities/interfaces";
 
 @Injectable({ providedIn: "root" })
 export class DataService {
   constructor(private http: HttpClient) {}
+  getImgs(projectName?: string): Observable<string> {
+    return this.http.get(`../assets/projects/${projectName}/names.json`).pipe(
+      filter((confirm) => !!confirm),
+      map((json: any) =>
+        json.img_names.map((img) => `assets/projects/${projectName}/${img}`)
+      ),
+      catchError((err) => {
+        return throwError(err);
+      })
+    );
+  }
 
-  getClaroImages$ = this.http.get("../assets/projects/Claro Eg/names.json").pipe(
-    filter((confirm) => !!confirm),
-    map((json: any) => json.img_names.map((img) => `assets/projects/Claro Eg/${img}`))
-  );
   getMySkills$ = of(Skills).pipe(filter((confirm) => !!confirm));
 }
 const Skills: Skill[] = [
@@ -86,7 +93,7 @@ const Skills: Skill[] = [
     color: "#4e8ef7",
   },
   {
-    name: "Npm",
+    name: "NPM",
     icon: "assets/skills-icons/npm-original-wordmark.svg",
     color: "#cb3837",
   },
@@ -113,68 +120,62 @@ const Skills: Skill[] = [
 
   {
     name: "Rxjs",
-    icon: "assets/skills-icons/wordpress-plain.svg",
+    icon: "assets/skills-icons/rxjs-1.svg",
     color: "#c0128e",
   },
   {
     name: "NGRX",
-    icon: "assets/skills-icons/wordpress-plain.svg",
+    icon: "assets/skills-icons/ngrx.svg",
     color: "#4b314f",
   },
   {
     name: "ES6",
-    icon: "assets/skills-icons/wordpress-plain.svg",
-    color: "#f6d755",
+    icon: "assets/skills-icons/es6.svg",
+    color: "#f26522",
   },
   {
     name: "Problem Solving",
-    icon: "assets/skills-icons/wordpress-plain.svg",
-    color: "#167672",
+    icon: "assets/skills-icons/problem-solving.svg",
+    color: "#393939",
   },
   {
     name: "Data Structures",
-    icon: "assets/skills-icons/wordpress-plain.svg",
-    color: "#072539",
+    icon: "assets/skills-icons/data-1.svg",
+    color: "#70d463",
   },
   {
     name: "OOP",
-    icon: "assets/skills-icons/wordpress-plain.svg",
-    color: "#145073",
+    icon: "assets/skills-icons/gears-setup-svgrepo-com.svg",
+    color: "#0052b4",
   },
   {
     name: "Angular Material",
-    icon: "assets/skills-icons/wordpress-plain.svg",
-    color: "#a92f38",
+    icon: "assets/skills-icons/angular-material-logo.svg",
+    color: "#fb8c00",
   },
   {
     name: "PrimNg",
-    icon: "assets/skills-icons/wordpress-plain.svg",
-    color: "#494949",
+    icon: "assets/skills-icons/primeng-logo.png",
+    color: "#b60229",
   },
   {
     name: "SCSS",
-    icon: "assets/skills-icons/wordpress-plain.svg",
-    color: "#494949",
+    icon: "assets/skills-icons/scss.png",
+    color: "#7c8895",
   },
   {
     name: "Angular Animations",
-    icon: "assets/skills-icons/wordpress-plain.svg",
-    color: "#494949",
-  },
-  {
-    name: "Angular Schematics",
-    icon: "assets/skills-icons/wordpress-plain.svg",
-    color: "#494949",
+    icon: "assets/skills-icons/angular.svg",
+    color: "#c80b0b",
   },
   {
     name: "Restfull APIS",
-    icon: "assets/skills-icons/wordpress-plain.svg",
-    color: "#494949",
+    icon: "assets/skills-icons/api.png",
+    color: "#ff4b00",
   },
   {
     name: "Agile",
-    icon: "assets/skills-icons/wordpress-plain.svg",
-    color: "#494949",
+    icon: "assets/skills-icons/2784065.png",
+    color: "#b00020",
   },
-
 ];

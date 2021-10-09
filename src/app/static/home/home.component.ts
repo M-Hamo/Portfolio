@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { _MatTableDataSource } from "@angular/material/table";
 import { MenuItem } from "primeng/api";
 import { Observable } from "rxjs";
@@ -14,11 +14,10 @@ import { DataService } from "./services/data.service";
 export class HomeComponent implements OnInit {
   displayImages: boolean = false;
   preloader: boolean = true;
-  socialButtons: MenuItem[];
+
   skills$: Observable<Skill[]> = this._data.getMySkills$;
   images: string[] = [];
 
-  constructor(private _data: DataService) {}
   responsiveOptions: any[] = [
     {
       breakpoint: "1024px",
@@ -34,77 +33,79 @@ export class HomeComponent implements OnInit {
     },
   ];
 
-  ngOnInit(): void {
-    this.socialButtons = [
-      {
-        icon: "pi pi-home",
-        command: () => {
-          window.open("https://www.linkedin.com/in/mohamed-eldeeb-94a3b11a4/");
-        },
+  socialButtons: MenuItem[] = [
+    {
+      icon: "pi pi-home",
+      command: () => {
+        window.open("https://www.linkedin.com/in/mohamed-eldeeb-94a3b11a4/");
       },
-      {
-        icon: "pi pi-send",
-        command: () => {
-          window.open(
-            "http://m.me/MohamedXEldeeb"
-          );
-        },
+    },
+    {
+      icon: "pi pi-send",
+      command: () => {
+        window.open("http://m.me/MohamedXEldeeb");
       },
-      {
-        icon: "pi pi-google",
-        command: () => {
-          window.open("mailto:mohamed.eldeib5@gmail.com");
-        },
+    },
+    {
+      icon: "pi pi-google",
+      command: () => {
+        window.open("mailto:mohamed.eldeib5@gmail.com");
       },
-      {
-        icon: "pi pi-phone",
-        command: () => {
-          window.open("https://wa.me/+201033898113");
-        },
+    },
+    {
+      icon: "pi pi-phone",
+      command: () => {
+        window.open("https://wa.me/+201033898113");
       },
-      {
-        icon: "pi pi-github",
-        command: () => {
-          window.open("https://github.com/M-Hamo", "_blank");
-        },
+    },
+    {
+      icon: "pi pi-github",
+      command: () => {
+        window.open("https://github.com/M-Hamo", "_blank");
       },
-    ];
-  }
+    },
+  ];
+
+  projects: Project[] = [
+    {
+      title: "Claro Eg",
+      img: "assets/projects/Claro Eg/promo.png",
+      details:
+        "Claro Eg is a website for buying, selling and marketing real estate in Egypt and the Middle East.",
+    },
+    {
+      title: "Hatly Wadely",
+      img: "assets/projects/Hatly Wadely/promo.png",
+      details:
+        "Hatly wadely is a Delivery service and market site for selling products and delivering orders to homes.",
+    },
+    {
+      title: "Academic archive",
+      img: "assets/projects/Academic archive/promo.png",
+      details:
+        "Academic archive is a website for archiving files on server storage.",
+    },
+  ];
+
+  constructor(private _data: DataService) {}
+  ngOnInit(): void {}
 
   onShowProject(title?: string): void {
-    title.includes("Claro Eg") &&
-      this._data.getClaroImages$.pipe(tap((_) => (this.displayImages = true))).subscribe({
-        next: (images) => {
-          this.images = images;
-          this.preloader = false;
-        },
-      });
+    title.includes(title) &&
+      this._data
+        .getImgs(title)
+        .pipe(tap((_) => (this.displayImages = true)))
+        .subscribe({
+          next: (images: any) => {
+            this.images = images;
+            this.preloader = false;
+          },
+        });
   }
 
   scrollToElement($element): void {
     setTimeout(() => {
       $element.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
-    }, 200);
+    }, 100);
   }
-
-  projects: Project[] = [
-    {
-      img: "assets/projects/Claro Eg/promo.png",
-      title: "Claro Eg",
-      details:
-        "Claro Eg is a website for buying, selling and marketing real estate in Egypt and the Middle East.",
-    },
-    {
-      img: "assets/projects/Claro Eg/promo.png",
-      title: "Claro Eg",
-      details:
-        "Claro Eg is a website for buying, selling and marketing real estate in Egypt and the Middle East.",
-    },
-    {
-      img: "assets/projects/Claro Eg/promo.png",
-      title: "Claro Eg",
-      details:
-        "Claro Eg is a website for buying, selling and marketing real estate in Egypt and the Middle East.",
-    },
-  ];
 }

@@ -141,7 +141,6 @@
         width: 30px;
         margin-right: 6px;
       }
-   
     }
   }
 }
@@ -150,7 +149,10 @@
   position: fixed;
   float: left;
   margin: 50px;
+  z-index: 999;
+
   ::ng-deep {
+    outline: none;
     .pi {
       font-size: 1.7rem;
       text-decoration: none;

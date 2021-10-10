@@ -17,7 +17,7 @@
     fxLayout="column"
     fxLayoutAlign="center stretch"
     data-aos="fade-right"
-    data-aos-duration="2000"
+    data-aos-duration="1000"
     data-aos-easing="ease-in-sine"
   >
     <div
@@ -31,13 +31,7 @@
       <span>Software developer</span>
     </div>
 
-    <div
-      class="about-me"
-      fxLayout="row wrap"
-      fxLayoutAlign="center center"
-      data-aos="zoom-in-left"
-      data-aos-duration="3000"
-    >
+    <div class="about-me" fxLayout="row wrap" fxLayoutAlign="center center">
       <div
         fxFlex="67"
         fxFlex.sm="100"
@@ -47,13 +41,20 @@
         fxFlexOrder.sm="2"
         fxFlexOrder.lt-sm="2"
       >
-        <div fxLayoutAlign="start center" fxLayoutAlign.lt-md="center center"><h4>About me</h4></div>
+        <div fxLayoutAlign="start center" fxLayoutAlign.lt-md="center center">
+          <h4>About me</h4>
+        </div>
         <div class="paragraph">
           My name is Mohamed, I graduated from the Faculty of Science, Tanta University,
           with a bachelor's degree Department of Computer Science with a grade of very
           good.
         </div>
-        <div fxLayoutAlign="start center" fxLayoutAlign.lt-md="center center" fxLayoutGap="20px" fxLayoutGap.lt-md="7px">
+        <div
+          fxLayoutAlign="start center"
+          fxLayoutAlign.lt-md="center center"
+          fxLayoutGap="20px"
+          fxLayoutGap.lt-md="7px"
+        >
           <a class="super-b" (click)="scrollToElement(myProjects)">My projects</a>
           <a class="super-b" (click)="scrollToElement(mySkills)">My Skills</a>
         </div>
@@ -68,7 +69,7 @@
       >
         <p-image
           src="assets/img/profile.jpeg"
-          alt="Image"
+          alt="Personal Image"
           width="200"
           height="200"
           [preview]="true"

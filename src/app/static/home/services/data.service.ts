@@ -1,12 +1,13 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable, of, throwError } from "rxjs";
-import { catchError, filter, map, tap } from "rxjs/operators";
+import { catchError, filter, map } from "rxjs/operators";
 import { Skill } from "src/shared/utilities/interfaces";
 
 @Injectable({ providedIn: "root" })
 export class DataService {
   constructor(private http: HttpClient) {}
+
   getImgs(projectName?: string): Observable<string> {
     return this.http.get(`../assets/projects/${projectName}/names.json`).pipe(
       filter((confirm) => !!confirm),

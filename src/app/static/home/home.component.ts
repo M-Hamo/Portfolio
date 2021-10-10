@@ -82,8 +82,7 @@ export class HomeComponent implements OnInit {
     {
       title: "Academic archive",
       img: "assets/projects/Academic archive/promo.png",
-      details:
-        "Academic archive is a website for archiving files on server storage.",
+      details: "Academic archive is a website for archiving files on server storage.",
     },
   ];
 

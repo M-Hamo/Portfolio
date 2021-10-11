@@ -23,7 +23,7 @@
     <div
       class="name"
       fxLayout.sm="column"
-      fxLayout.lt-sm="column"
+      fxLayout.lt-sm="row wrap"
       fxLayoutAlign.sm="center center"
       fxLayoutAlign.lt-sm="center center"
     >
@@ -123,7 +123,12 @@
     data-aos-duration="2000"
   >
     <h4 fxLayoutAlign="center center">Experiences</h4>
-    <div class="project-cont" fxLayout="row wrap" fxLayoutAlign="space-between center">
+    <div
+      class="project-cont"
+      fxLayout="row wrap"
+      fxLayoutAlign="space-between center"
+      fxLayoutAlign.lt-md="center center"
+    >
       <app-project
         *ngFor="let proj of projects"
         [proj]="proj"

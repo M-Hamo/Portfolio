@@ -182,7 +182,7 @@
 
 @media (max-width: 767px) {
   .super-b {
-    font-size: 14px;
+    font-size: 12px;
     padding: 8px 5px;
   }
   .first {
@@ -197,7 +197,7 @@
         line-height: 25px;
         font-weight: 300;
         .me {
-          font-size: 25px;
+          font-size: 23px;
           text-transform: uppercase;
           font-weight: 700;
           color: #fff;
@@ -207,16 +207,16 @@
 
     .about-me {
       left: 0px;
-      padding: 0px;
+      padding: 10px !important;
       h4 {
         padding-bottom: 5px;
-        font-size: 17px;
+        font-size: 15px;
         font-weight: 400;
       }
 
       .paragraph {
         color: #fff;
-        font-size: 14px;
+        font-size: 12px;
         margin-bottom: 10px;
       }
       .photo {
@@ -232,10 +232,12 @@
   }
 
   .second {
+    padding: 50px 0;
     .banner {
+      min-height: 225vh !important;
     }
     .project-cont {
-      width: 150%;
+      width: 100%;
       z-index: 9;
     }
   }

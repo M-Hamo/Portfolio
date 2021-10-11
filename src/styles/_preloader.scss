@@ -1,57 +1,44 @@
 $color: #f68b1e;
 
 // three dots animation for ( App Rote )
-.spinner {
-  margin: 50vh auto;
-  width: 70px;
+
+.preloader-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #242931;
+}
+
+.cdiv {
+  width: 15rem;
+  height: 15rem;
+}
+.rot {
+  position: absolute;
+  width: 15rem;
+  height: 15rem;
+  border-right: 0.3rem solid var(--color);
+  border-radius: 50%;
+  animation: preloader 2s linear infinite;
+}
+@keyframes preloader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.lh {
+  color: var(--color);
+  font-family: "Pattaya", sans-serif;
+  position: relative;
+  top: 48%;
+  left: 50%;
   text-align: center;
+  transform: translate(-50%, -50%);
 }
-
-.spinner > div {
-  width: 15px;
-  height: 15px;
-  background-color: #ff6f00;
-
-  border-radius: 100%;
-  display: inline-block;
-  -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
-  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
-}
-
-.spinner .bounce1 {
-  -webkit-animation-delay: -0.32s;
-  animation-delay: -0.32s;
-}
-
-.spinner .bounce2 {
-  -webkit-animation-delay: -0.16s;
-  animation-delay: -0.16s;
-}
-
-@-webkit-keyframes sk-bouncedelay {
-  0%,
-  80%,
-  100% {
-    -webkit-transform: scale(0);
-  }
-  40% {
-    -webkit-transform: scale(1);
-  }
-}
-
-@keyframes sk-bouncedelay {
-  0%,
-  80%,
-  100% {
-    -webkit-transform: scale(0);
-    transform: scale(0);
-  }
-  40% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
-}
-
 
 // Floating social media
 .floating-container {

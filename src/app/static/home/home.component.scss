@@ -1,4 +1,4 @@
-* {
+*:not(mat-icon) {
   font-family: "Roboto", sans-serif;
 }
 .banner {
@@ -239,6 +239,36 @@
     .project-cont {
       width: 100%;
       z-index: 9;
+    }
+  }
+}
+
+.toTop {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  button {
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    border: none;
+    cursor: pointer;
+    color: var(--color);
+    background-color: #455871;
+    mat-icon {
+      position: relative;
+      height: 45px;
+      width: 45px;
+      font-size: 45px;
+    }
+    &:hover {
+      border-right: 5px solid var(--color);
+      border-left: 5px solid var(--color);
+      border-top: 1px solid var(--color);
+      border-bottom: 1px solid var(--color);
+      mat-icon {
+        top: -5px;
+      }
     }
   }
 }

@@ -1,4 +1,4 @@
-<div class="contacts" dir="ltr" #top [ngStyle.xs]="{ margin: '10px' }">
+<div class="contacts" dir="ltr" [ngStyle.xs]="{ margin: '10px' }">
   <p-speedDial
     [model]="socialButtons"
     [radius]="150"
@@ -8,7 +8,7 @@
     hideIcon="pi pi-times"
   ></p-speedDial>
 </div>
-<div class="first" fxLayout="row wrap" fxLayoutAlign="center center">
+<div class="first" fxLayout="row wrap" fxLayoutAlign="center center" #top>
   <div
     fxFlex="50"
     fxFlex.lt-md="70"
@@ -167,4 +167,10 @@
   <div fxFlex="100" class="made-by" fxLayoutAlign="center center">
     Made by <a href="https://github.com/M-Hamo" target="_blanck">Mohamed Eldeeb</a> ❤✌
   </div>
+</div>
+
+<div class="toTop" @fade *ngIf="toTop">
+  <button fxLayoutAlign="center center" (click)="scrollToElement(top)">
+    <mat-icon>expand_less</mat-icon>
+  </button>
 </div>

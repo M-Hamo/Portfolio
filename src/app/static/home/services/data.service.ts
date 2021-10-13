@@ -28,6 +28,7 @@ const Skills: Skill[] = [
     icon: "assets/skills-icons/angular.svg",
     color: "#c80b0b",
   },
+
   {
     name: "Node.js",
     icon: "assets/skills-icons/nodejs.svg",
@@ -44,14 +45,45 @@ const Skills: Skill[] = [
     color: "rgb(79, 55, 43)",
   },
   {
-    name: "JavaScript",
-    icon: "assets/skills-icons/javascript.svg",
-    color: "rgb(240, 219, 79)",
+    name: "Ionic",
+    icon: "assets/skills-icons/ionic-original.svg",
+    color: "#4e8ef7",
   },
   {
     name: "TypeScript",
     icon: "assets/skills-icons/typescript.svg",
     color: "#045992",
+  },
+
+  {
+    name: "Rxjs",
+    icon: "assets/skills-icons/rxjs-1.svg",
+    color: "#c0128e",
+  },
+  {
+    name: "NGRX",
+    icon: "assets/skills-icons/ngrx.svg",
+    color: "#4b314f",
+  },
+  {
+    name: "Redux",
+    icon: "assets/skills-icons/redux-original.svg",
+    color: "#764abc",
+  },
+  {
+    name: "Restfull APIS",
+    icon: "assets/skills-icons/api.png",
+    color: "#ff4b00",
+  },
+  {
+    name: "JavaScript",
+    icon: "assets/skills-icons/javascript.svg",
+    color: "rgb(240, 219, 79)",
+  },
+  {
+    name: "ES6",
+    icon: "assets/skills-icons/es6.svg",
+    color: "#f26522",
   },
   {
     name: "HTML",
@@ -69,9 +101,9 @@ const Skills: Skill[] = [
     color: "rgb(203, 102, 153)",
   },
   {
-    name: "Redux",
-    icon: "assets/skills-icons/redux-original.svg",
-    color: "#764abc",
+    name: "SCSS",
+    icon: "assets/skills-icons/scss.png",
+    color: "#7c8895",
   },
   {
     name: "Bootstrap",
@@ -88,11 +120,7 @@ const Skills: Skill[] = [
     icon: "assets/skills-icons/github-original.svg",
     color: "#181616",
   },
-  {
-    name: "Ionic",
-    icon: "assets/skills-icons/ionic-original.svg",
-    color: "#4e8ef7",
-  },
+
   {
     name: "NPM",
     icon: "assets/skills-icons/npm-original-wordmark.svg",
@@ -114,27 +142,6 @@ const Skills: Skill[] = [
     color: "#00bcb4",
   },
   {
-    name: "WordPress",
-    icon: "assets/skills-icons/wordpress-plain.svg",
-    color: "#494949",
-  },
-
-  {
-    name: "Rxjs",
-    icon: "assets/skills-icons/rxjs-1.svg",
-    color: "#c0128e",
-  },
-  {
-    name: "NGRX",
-    icon: "assets/skills-icons/ngrx.svg",
-    color: "#4b314f",
-  },
-  {
-    name: "ES6",
-    icon: "assets/skills-icons/es6.svg",
-    color: "#f26522",
-  },
-  {
     name: "Problem Solving",
     icon: "assets/skills-icons/problem-solving.svg",
     color: "#393939",
@@ -149,30 +156,28 @@ const Skills: Skill[] = [
     icon: "assets/skills-icons/gears-setup-svgrepo-com.svg",
     color: "#0052b4",
   },
+
   {
     name: "Angular Material",
     icon: "assets/skills-icons/angular-material-logo.svg",
     color: "#fb8c00",
   },
-  {
-    name: "PrimNg",
-    icon: "assets/skills-icons/primeng-logo.png",
-    color: "#b60229",
-  },
-  {
-    name: "SCSS",
-    icon: "assets/skills-icons/scss.png",
-    color: "#7c8895",
-  },
+
   {
     name: "Angular Animations",
     icon: "assets/skills-icons/angular.svg",
     color: "#c80b0b",
   },
   {
-    name: "Restfull APIS",
-    icon: "assets/skills-icons/api.png",
-    color: "#ff4b00",
+    name: "PrimNg",
+    icon: "assets/skills-icons/primeng-logo.png",
+    color: "#b60229",
+  },
+
+  {
+    name: "WordPress",
+    icon: "assets/skills-icons/wordpress-plain.svg",
+    color: "#494949",
   },
   {
     name: "Agile",

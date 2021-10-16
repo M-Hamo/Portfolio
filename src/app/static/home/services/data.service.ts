@@ -120,7 +120,6 @@ const Skills: Skill[] = [
     icon: "assets/skills-icons/github-original.svg",
     color: "#181616",
   },
-
   {
     name: "NPM",
     icon: "assets/skills-icons/npm-original-wordmark.svg",
@@ -156,7 +155,6 @@ const Skills: Skill[] = [
     icon: "assets/skills-icons/gears-setup-svgrepo-com.svg",
     color: "#0052b4",
   },
-
   {
     name: "Angular Material",
     icon: "assets/skills-icons/angular-material-logo.svg",
@@ -173,7 +171,6 @@ const Skills: Skill[] = [
     icon: "assets/skills-icons/primeng-logo.png",
     color: "#b60229",
   },
-
   {
     name: "WordPress",
     icon: "assets/skills-icons/wordpress-plain.svg",

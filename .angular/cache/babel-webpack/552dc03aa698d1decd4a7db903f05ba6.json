@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { animate, state, style, transition, trigger } from \"@angular/animations\";\nexport const fade = trigger(\"fade\", [state(\"void\", style({\n  opacity: 0,\n  transform: \"translateX(20px)\"\n})), transition(\":enter, :leave\", [animate(\"300ms ease-out\")])]);","map":null,"metadata":{},"sourceType":"module"}

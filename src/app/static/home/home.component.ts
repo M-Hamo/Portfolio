@@ -2,7 +2,7 @@ import { Component, HostListener, OnDestroy, OnInit } from "@angular/core";
 import { _MatTableDataSource } from "@angular/material/table";
 import { MenuItem } from "primeng/api";
 import { Observable, Subject } from "rxjs";
-import { tap } from "rxjs/operators";
+import { takeUntil, tap } from "rxjs/operators";
 import { fade } from "src/shared/animations/fade";
 import { Project, Skill } from "src/shared/utilities/interfaces";
 import { DataService } from "./services/data.service";
@@ -99,12 +99,15 @@ export class HomeComponent implements OnInit, OnDestroy {
     title.includes(title) &&
       this._data
         .getImgs(title)
-        .pipe(tap((_) => (this.displayImages = true)))
-        .subscribe({
-          next: (images: any) => {
+        .pipe(
+          takeUntil(this._unsubscribeAll$),
+          tap((images: any) => {
             this.images = images;
-            this.preloader = false;
-          },
+            this.displayImages = true;
+          })
+        )
+        .subscribe((_) => {
+          this.preloader = false;
         });
   }
 
@@ -120,7 +123,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this._unsubscribeAll$.next(true)
-    this._unsubscribeAll$.complete()
+    this._unsubscribeAll$.next(true);
+    this._unsubscribeAll$.complete();
   }
 }

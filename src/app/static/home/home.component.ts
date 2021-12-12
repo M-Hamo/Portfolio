@@ -1,7 +1,7 @@
-import { Component, HostListener, OnInit } from "@angular/core";
+import { Component, HostListener, OnDestroy, OnInit } from "@angular/core";
 import { _MatTableDataSource } from "@angular/material/table";
 import { MenuItem } from "primeng/api";
-import { Observable } from "rxjs";
+import { Observable, Subject } from "rxjs";
 import { tap } from "rxjs/operators";
 import { fade } from "src/shared/animations/fade";
 import { Project, Skill } from "src/shared/utilities/interfaces";
@@ -13,7 +13,11 @@ import { DataService } from "./services/data.service";
   styleUrls: ["./home.component.scss"],
   animations: [fade],
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
+  constructor(private readonly _data: DataService) {}
+
+  private _unsubscribeAll$: Subject<boolean> = new Subject();
+
   displayImages: boolean = false;
   preloader: boolean = true;
   toTop: boolean = false;
@@ -89,7 +93,6 @@ export class HomeComponent implements OnInit {
     },
   ];
 
-  constructor(private _data: DataService) {}
   ngOnInit(): void {}
 
   onShowProject(title?: string): void {
@@ -114,5 +117,10 @@ export class HomeComponent implements OnInit {
   @HostListener("window:scroll", ["$event"])
   track(event) {
     this.toTop = window.pageYOffset >= 500 ? true : false;
+  }
+
+  ngOnDestroy(): void {
+    this._unsubscribeAll$.next(true)
+    this._unsubscribeAll$.complete()
   }
 }

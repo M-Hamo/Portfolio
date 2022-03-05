@@ -91,9 +91,6 @@ MIT
 @angular/router
 MIT
 
-@angular/service-worker
-MIT
-
 aos
 MIT
 The MIT License (MIT)
